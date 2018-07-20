@@ -112,17 +112,17 @@ describe("#InputText", () => {
 // Component.tsx
 // ...
 class Component extends React.PureComponent {
-    state = {
-        isOpen: true,
-    }
-    handleClose = () => {
-        this.setState({isOpen: false})
-        this.props.onClose()
-    }
-    handleClick = () => {
-        this.handleClose()
-        this.props.onClick()
-    }
+  state = {
+    isOpen: true
+  };
+  handleClose = () => {
+    this.setState({ isOpen: false });
+    this.props.onClose();
+  };
+  handleClick = () => {
+    this.handleClose();
+    this.props.onClick();
+  };
 
   render() {
     const { isOpen } = this.state;
@@ -130,10 +130,8 @@ class Component extends React.PureComponent {
     return (
       <>
         <Button onClick={this.handleClick}>Close</Button>
-        {isOpen && (
-            <SomeComponent />
-        )}
-      <>
+        {isOpen && <SomeComponent />}
+      </>
     );
   }
 }
