@@ -225,7 +225,7 @@ function withUrl(Wrapped) {
         render() {
             return React.createElement(Wrapped, {
                 ...this.props,
-                urlParams,
+                urlParams: getUrlParams(), // wil return object of with url params
                 onResetParams: this.handleReset,
             }
         }
